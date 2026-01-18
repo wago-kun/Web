@@ -131,9 +131,9 @@ button:hover {
 
 @media (prefers-color-scheme: dark) {
   .footer {
-    background: #0f172a !important;
-    color: #f5f7fa !important;
-  }
+  background: var(--bg-color);
+  color: var(--text-color);
+}
 }
 
 /* ===== スマホ対応 ===== */
@@ -156,6 +156,8 @@ media (max-width: 600px) {
   color: var(--main);
   font-weight: bold;
 }
+
+
 
 .news-list {
   list-style: none;
