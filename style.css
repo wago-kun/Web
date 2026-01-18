@@ -129,11 +129,9 @@ footer {
   color: #eee !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  .footer {
-  background: var(--bg-color);
-  color: var(--text-color);
-}
+footer {
+  background-color: #0f172a  !important;
+  color: #eee !important;
 }
 
 /* ===== スマホ対応 ===== */
