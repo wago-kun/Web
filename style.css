@@ -124,9 +124,9 @@ button:hover {
 }
 
 /* ===== フッター ===== */
-.footer {
-  background: #f5f7fa;
-  color: #111111;
+footer {
+  background-color: #111 !important;
+  color: #eee !important;
 }
 
 @media (prefers-color-scheme: dark) {
