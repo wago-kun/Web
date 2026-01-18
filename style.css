@@ -129,6 +129,13 @@ button:hover {
   color: var(--sub);
 }
 
+@media (prefers-color-scheme: dark) {
+  footer {
+    background: #020617;
+    color: #94a3b8;
+  }
+}
+
 /* ===== スマホ対応 ===== */
 media (max-width: 600px) {
   .section {
