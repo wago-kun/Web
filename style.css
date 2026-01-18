@@ -3,7 +3,8 @@
   --main: #2563eb;
   --bg: #f5f7fa;
   --text: #333;
-  --sub: #555;
+  --sub: #f5f7fa;
+  
 }
 
 * {
@@ -124,15 +125,14 @@ button:hover {
 
 /* ===== フッター ===== */
 .footer {
-  text-align: center;
-  padding: 24px;
-  color: var(--sub);
+  background: #f5f7fa;
+  color: #111111;
 }
 
 @media (prefers-color-scheme: dark) {
-  footer {
-    background: #020617;
-    color: #94a3b8;
+  .footer {
+    background: #0f172a !important;
+    color: #f5f7fa !important;
   }
 }
 
@@ -270,7 +270,16 @@ body {
 
 @media (prefers-color-scheme: dark) {
   body {
-    background: #0f172a;
-    color: #e5e7eb;
+  background: #0f172a !important;
+  color: #f5f7fa !important;
   }
+}
+
+body {
+  background: var(--bg-main);
+  color: var(--text-main);
+}
+
+.footer {
+  background: var(--bg-footer);
 }
