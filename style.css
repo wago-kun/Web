@@ -257,24 +257,13 @@ media (max-width: 600px) {
 }
 
 body {
-  margin: 0;
-  font-family: "Inter", "Noto Sans JP", sans-serif;
-  background: #ffffff;
-  color: #000000;
+  background: white;
+  color: black;
 }
 
-<head>
-  <style>
-    body {
-      background-color: #ffffff;
-      color: #111111;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      body {
-        background-color: #0f172a;
-        color: #e5e7eb;
-      }
-    }
-  </style>
-</head>
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #0f172a;
+    color: #e5e7eb;
+  }
+}
