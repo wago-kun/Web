@@ -283,3 +283,32 @@ body {
 .footer {
   background: var(--bg-footer);
 }
+
+body {
+  background: #fff;
+  color: #333;
+}
+
+.section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+body {
+  background: #fff;
+  color: #333;
+}
+
+.section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #111;
+    color: #eee;
+  }
+}
