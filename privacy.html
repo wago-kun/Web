@@ -8,6 +8,11 @@
 </head>
 <body>
 
+  <button class="theme-toggle" id="theme-toggle">
+    <span class="theme-icon">🌙</span>
+    <span class="theme-text">ダークモード</span>
+  </button>
+
   <header class="header">
     <h1>プライバシーポリシー</h1>
   </header>
@@ -64,6 +69,61 @@
       <a href="privacy.html">プライバシーポリシー</a>
     </div>
   </footer>
+
+<script>
+  // ダークモード機能
+  const themeToggle = document.getElementById('theme-toggle');
+  const themeIcon = themeToggle.querySelector('.theme-icon');
+  const themeText = themeToggle.querySelector('.theme-text');
+  
+  // ローカルストレージからテーマ設定を読み込み
+  const savedTheme = localStorage.getItem('theme');
+  const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  
+  // 初期テーマを設定
+  if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    themeIcon.textContent = '☀️';
+    themeText.textContent = 'ライトモード';
+  }
+  
+  // テーマ切り替え機能
+  themeToggle.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    // テーマ属性を切り替え
+    document.documentElement.setAttribute('data-theme', newTheme);
+    
+    // ローカルストレージに保存
+    localStorage.setItem('theme', newTheme);
+    
+    // ボタンの表示を更新
+    if (newTheme === 'dark') {
+      themeIcon.textContent = '☀️';
+      themeText.textContent = 'ライトモード';
+    } else {
+      themeIcon.textContent = '🌙';
+      themeText.textContent = 'ダークモード';
+    }
+  });
+  
+  // システムテーマ変更を監視
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    if (!localStorage.getItem('theme')) {
+      const newTheme = e.matches ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      
+      if (newTheme === 'dark') {
+        themeIcon.textContent = '☀️';
+        themeText.textContent = 'ライトモード';
+      } else {
+        themeIcon.textContent = '🌙';
+        themeText.textContent = 'ダークモード';
+      }
+    }
+  });
+</script>
 
 </body>
 </html>
